@@ -1,0 +1,25 @@
+<div>
+    <h3 class="text-center m-5 text-success">Account Holders Details</h3>
+    <table class="table ms-5">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Account No</th>
+            <th scope="col">Account Type</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let account of allAccounts">
+          <tr>
+            <th scope="row">{{account.id}}</th>
+            <td>{{account.firstname}}</td>
+            <td>{{account.lastname}}</td>
+            <td>{{account.acno}}</td>
+            <td>{{account.acType}}</td>
+            <th><a class="btn btn-warning me-5 " routerLink="view-account/{{account.id}}"><i class="fa-solid fa-eye "></i></a>&nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; <button (click)="deleteAccount(account.id)" class="btn btn-danger"><i class="fa-solid fa-trash "></i></button></th>
+          </tr>
+        </tbody>
+      </table>
+</div>

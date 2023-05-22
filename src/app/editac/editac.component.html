@@ -1,0 +1,68 @@
+<div class="m-5 ">
+   
+    <div class="d-flex justify-content-around">
+        <form class="border rounded border-info border-3 m-5 p-5 w-50">
+            <h3 class="mb-5 text-center text-success">Update Bank Account</h3>
+            <input name="id" #id="ngModel" [(ngModel)]="account.id" type="text" class="form-control mb-2"
+                placeholder="Id" required>
+            <!-- id validation -->
+            <div *ngIf="id.invalid && id.touched" class="mb-2 text-danger">
+                Please enter a valid id
+            </div>
+
+            <input name="fname" #fname="ngModel" [(ngModel)]="account.firstname" type="text" class="form-control mb-2"
+                placeholder="First name" required pattern="[a-zA-z ]*">
+            <!-- first name validation -->
+            <div *ngIf="fname.invalid && fname.touched" class="mb-2 text-danger">
+                Please enter a valid first name
+            </div>
+
+            <input name="lname" #lname="ngModel" [(ngModel)]="account.lastname" type="text" class="form-control mb-2"
+                placeholder="Last name" required pattern="[a-zA-z ]*">
+            <!-- last name validation -->
+            <div *ngIf="lname.invalid && lname.touched" class="mb-2 text-danger">
+                Please enter a valid last name
+            </div>
+
+            <input name="acno" #acno="ngModel" [(ngModel)]="account.acno" type="number" class="form-control mb-2"
+                placeholder="Account No" required pattern="[0-9 ]*">
+            <!-- account number validation -->
+            <div *ngIf="acno.invalid && acno.touched" class="mb-2 text-danger">
+                Please enter a valid account number
+            </div>
+
+            <input name="email" #email="ngModel" [(ngModel)]="account.email" type="email" class="form-control mb-2"
+                placeholder="Email" email required>
+            <!-- email validation -->
+            <div *ngIf="email.invalid && email.touched" class="mb-2 text-danger">
+                Please enter a valid email
+            </div>
+
+            <input name="acType" #acType="ngModel" [(ngModel)]="account.acType" type="text" class="form-control mb-2"
+                placeholder="Account Type" required pattern="[a-zA-Z ]*">
+            <!-- account type validation -->
+            <div *ngIf="acType.invalid && acType.touched" class="mb-2 text-danger">
+                Please enter a valid last name
+            </div>
+
+            <input name="mobile" #mobile="ngModel" [(ngModel)]="account.mobile" type="text" class="form-control mb-2"
+                placeholder="Contact Number" required minlength="10" maxlength="10" pattern="[0-9]*">
+            <!-- account number validation -->
+            <div *ngIf="mobile.invalid && mobile.touched" class="mb-2 text-danger">
+                Please enter a valid phone number
+            </div>
+
+            <input name="photo" #photo="ngModel" [(ngModel)]="account.photo" type="" class="form-control mb-2"
+                placeholder="User Image URL" required>
+            <!-- photo validation -->
+            <div *ngIf="photo.invalid && photo.touched" class="mb-2 text-danger">
+                Please enter a valid url
+            </div>
+            <!-- buttons -->
+            <div class="d-flex justify-content-between"> 
+                <a routerLink="" class="btn btn-danger mt-3">Close</a>
+                <button (click)="editAccount(account.id)" class="btn btn-warning mt-3">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

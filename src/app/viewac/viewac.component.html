@@ -1,0 +1,19 @@
+<!-- view account -->
+<div class="d-flex justify-content-center align-items-center ">
+    <div class="card border rounded border-info border-0 m-5 p-5 align-middle"
+        style="width: 450px;background-color:rgb(136, 224, 136)">
+        <img class="mb-2 rounded mx-auto d-block" width="130px" height="130px" [src]="account.photo" alt="image">
+        <div class="card-body">
+            <form class="text-center fst-italic">
+                <h3>{{account.firstname}} {{account.lastname}}</h3>
+                <h5 class="fst-italic">Id : {{account.id}}</h5>
+                <h5 class="fst-italic">Account no : {{account.acno}}</h5>
+                <h5 class="fst-italic">Email : {{account.email}}</h5>
+                <h5 class="fst-italic">Account Type : {{account.acType}}</h5>
+                <h5 class="fst-italic">Contact No : {{account.mobile}}</h5>
+                <a routerLink="/edit-account/{{account.id}}" class="btn btn-danger mt-4"><i
+                        class="fa-solid fa-pencil"></i> Edit </a>
+            </form>
+        </div>
+    </div>
+</div>
